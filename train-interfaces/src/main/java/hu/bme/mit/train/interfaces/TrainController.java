@@ -1,6 +1,5 @@
 package hu.bme.mit.train.interfaces;
 
-import hu.bme.mit.train.sensor.Tachograph;
 
 public interface TrainController {
 
@@ -12,6 +11,5 @@ public interface TrainController {
 
 	void setJoystickPosition(int joystickPosition);
 
-	Tachograph getTg();
 
 }

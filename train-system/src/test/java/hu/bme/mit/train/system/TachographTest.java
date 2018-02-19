@@ -1,5 +1,6 @@
 package hu.bme.mit.train.system;
 
+import hu.bme.mit.train.controller.TrainControllerImpl;
 import hu.bme.mit.train.sensor.Tachograph;
 import org.junit.Assert;
 import org.junit.Before;
@@ -40,7 +41,7 @@ public class TachographTest {
         Assert.assertEquals(10, controller.getReferenceSpeed());
         controller.followSpeed();
         Assert.assertEquals(15, controller.getReferenceSpeed());
-        Tachograph tg = controller.getTg();
+        Tachograph tg = ((TrainControllerImpl)controller).getTg();
         Assert.assertTrue(tg.getValues().size()>0);
 
     }
