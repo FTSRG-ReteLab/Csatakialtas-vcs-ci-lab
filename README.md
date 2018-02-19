@@ -2,6 +2,10 @@
 
 This is a sample application for the verification laboratory.
 
+## Ez a mi saját bekezdésünk
+
+* This is our second  *Verification laboratory* __excercise__ [check this out](http://inf.mit.bme.hu)
+
 ## Overview
 
 The application represents a simple train controller system with the following three components.
