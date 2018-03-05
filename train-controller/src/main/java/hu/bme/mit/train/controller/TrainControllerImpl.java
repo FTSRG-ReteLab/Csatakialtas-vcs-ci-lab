@@ -45,7 +45,7 @@ public class TrainControllerImpl implements TrainController {
 	private void enforceSpeedLimit() {
 		if (referenceSpeed > speedLimit) {
 			referenceSpeed = speedLimit;
-			System.out.println("Speed limit reached");
+			// System.out.println("Speed limit reached");
 		}
 	}
 
