@@ -9,17 +9,17 @@ import com.google.common.collect.Table;
  */
 public class Tachograph {
     public enum TachoColumns {
-        CurrentTime,
-        JoystickPosition,
-        ReferenceSpeed
+        CURRENT_TIME,
+        JOYSTICK_POSITION,
+        REFERENCE_SPEED
     }
     private Table<Integer, TachoColumns, Long> values = HashBasedTable.create();
     private int currentRow=0;
 
     public void logValue(int joystickPosition, int referenceSpeed){
-        values.put(currentRow,TachoColumns.CurrentTime, System.currentTimeMillis());
-        values.put(currentRow,TachoColumns.JoystickPosition, (long)joystickPosition);
-        values.put(currentRow,TachoColumns.ReferenceSpeed, (long)referenceSpeed);
+        values.put(currentRow,TachoColumns.CURRENT_TIME, System.currentTimeMillis());
+        values.put(currentRow,TachoColumns.JOYSTICK_POSITION, (long)joystickPosition);
+        values.put(currentRow,TachoColumns.REFERENCE_SPEED, (long)referenceSpeed);
         currentRow++;
 
     }
