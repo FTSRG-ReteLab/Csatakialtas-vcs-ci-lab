@@ -3,7 +3,7 @@ package hu.bme.mit.train.controller;
 import hu.bme.mit.train.interfaces.TrainController;
 import hu.bme.mit.train.sensor.Tachograph;
 
-public class TrainControllerImpl implements TrainController {
+public class TrainControllerImpl implements TrainController, Runnable {
 
 	private int step = 0;
 	private int referenceSpeed = 0;
@@ -50,5 +50,17 @@ public class TrainControllerImpl implements TrainController {
 
 	public Tachograph getTg(){
 		return tg;
+	}
+
+	@Override
+	public void run() {
+		while(true){
+			followSpeed();
+			try {
+				Thread.sleep(750);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 }
