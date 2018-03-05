@@ -3,9 +3,15 @@ package hu.bme.mit.train.controller;
 import hu.bme.mit.train.interfaces.TrainController;
 import hu.bme.mit.train.sensor.Tachograph;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class TrainControllerImpl implements TrainController {
 
+	private Timer timer;
 	private int step = 0;
+
+
 	private int referenceSpeed = 0;
 	private int speedLimit = 50;
 	private Tachograph tg= new Tachograph();
@@ -50,5 +56,16 @@ public class TrainControllerImpl implements TrainController {
 
 	public Tachograph getTg(){
 		return tg;
+	}
+
+	public void startSimulation(){
+		if(timer!=null)return;
+		timer=new Timer();
+		timer.schedule(new TimerTask() {
+			@Override
+			public void run() {
+				followSpeed();
+			}
+		},50);
 	}
 }
