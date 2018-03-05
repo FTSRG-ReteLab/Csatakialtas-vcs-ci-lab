@@ -8,7 +8,6 @@ import hu.bme.mit.train.sensor.Tachograph;
 public class TrainControllerImpl implements TrainController, Runnable {
 
 
-	private Timer timer;
 	private int step = 0;
 
 
