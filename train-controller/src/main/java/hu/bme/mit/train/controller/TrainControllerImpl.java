@@ -57,7 +57,7 @@ public class TrainControllerImpl implements TrainController, Runnable {
 		while(true){
 			followSpeed();
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(750);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
